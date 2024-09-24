@@ -12,8 +12,8 @@ def home():
     return jsonify(response)
 
 # /status route handler that returns a plain string "ok"
-@app.route('/status')
-def status():
+@app.route('/stats')
+def stats():
     return "ok", 200
 
 if __name__ == '__main__':

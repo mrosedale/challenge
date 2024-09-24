@@ -33,7 +33,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	}
 }
 
-func status(w http.ResponseWriter, r *http.Request) {
+func stats(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "text/plain")
 	w.WriteHeader(http.StatusOK)
 	fmt.Fprintln(w, "ok")
@@ -42,7 +42,7 @@ func status(w http.ResponseWriter, r *http.Request) {
 func main() {
 	// Set route and handler
 	http.HandleFunc("/", handler)
-	http.HandleFunc("/status", status)
+	http.HandleFunc("/stats", stats)
 
 	// Start server on port 8080
 	log.Println("Server is running on port 8080...")
